@@ -23,12 +23,24 @@ const Cart = () => {
   const oncheckout = (ALLPRODUCTS) => {
     setshowModal(true);
   };
+  const [loginguest, setloginguest] = useState(false);
 
   const loginasGuest = () => {
+    let loginguest = "true";
+    setloginguest(loginguest);
     setshowModal(false);
     setshowCheckoutModal(true);
+    
   };
 
+  
+  const registerandLogin = () => {
+    let loginguest = "false";
+    setloginguest(loginguest);
+    setshowModal(false);
+    setshowCheckoutModal(true);
+   
+  };
   const [countItem, setcountItem] = useState({});
   const [count, setCount] = useState(1);
 
@@ -216,8 +228,16 @@ const Cart = () => {
                 onClick={() => loginasGuest("true")}
               >
                 Login as Guest
+              </button>&nbsp;
+              <button
+                type="button"
+                className="btn btn-secondary btn-lg "
+                onClick={() => registerandLogin("true")}
+              >
+                Register and Login
               </button>
             </div>
+
           </div>
         </Modal.Body>
       </Modal>
@@ -256,6 +276,31 @@ const Cart = () => {
             }}
           >
             <div className="container">
+            {loginguest !== "true" && (
+              <>
+              <h1>Register and Place Order</h1>
+
+              <div className="row col-lg-12">
+              <div className="col-lg-6 py-2">
+                <input
+                  type="email"
+                  className="form-control"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+              <div className="col-lg-6 py-2">
+                <input
+                  type="password"
+                  className="form-control"
+                  placeholder="Password"
+                  required
+                />
+              </div>
+              </div>
+              </>
+              ) }
+              
               <h1>Payment Details</h1>
               <div className="row col-lg-12">
                 <div className="col-lg-6 py-2">
@@ -291,7 +336,7 @@ const Cart = () => {
                   />
                 </div>
 
-                <>
+                <div>
                   <h1 className="py-3">Item Details</h1>
                   <table>
                     <tr>
@@ -338,7 +383,7 @@ const Cart = () => {
                       Place Order
                     </button>
                   </div>
-                </>
+                </div>
               </div>
             </div>
           </Form>
