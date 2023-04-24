@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+}
+
+main {
+  margin: 16px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  background: #00b300;
+  color: white;
+  font-family: Helvetica;
+  font-weight: 300;
+}
+
+.navbar__title {
+  margin-right: auto;
+  font-size: 150%;
+  padding: 12px 16px;
+}
+
+.navbar__item {
+  padding: 16px 16px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.product {
+  border-radius: 15px;
+  width: 300px;
+  height: 350px;
+  margin: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.product img {
+  width: 400px;
+  height: 400px;
+}
+
+.product .description {
+  text-align: center;
+}
+
+.product:hover {
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+
+.products {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+}
+
+
+.footer{
+background: grey;
+
+
+}
+.bodydiv{
+min-height:865px;
+}
+.wishlist {
+  color: red;
+}
+.notwhislist{
+  color: #4000ff;
+}
+
+.wishlist:hover {
+  color: red;
+}
+
+.cart {
+  color: white;
+}
+
+
+.cart:hover {
+  color: white;
+}
+
+.wishlisted{
+  color: red;
+}
+.icon-green {
+  color: red;
+  fill: red;
+}
+.headingcolor{
+  color: #00b300;
+}
