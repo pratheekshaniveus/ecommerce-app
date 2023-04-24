@@ -234,7 +234,7 @@ const Cart = () => {
                 className="btn btn-secondary btn-lg "
                 onClick={() => registerandLogin("true")}
               >
-                Register and Login
+                 Login
               </button>
             </div>
 
@@ -278,7 +278,7 @@ const Cart = () => {
             <div className="container">
             {loginguest !== "true" && (
               <>
-              <h1>Register and Place Order</h1>
+              <h1>Login and Place Order</h1>
 
               <div className="row col-lg-12">
               <div className="col-lg-6 py-2">
@@ -338,7 +338,7 @@ const Cart = () => {
 
                 <div>
                   <h1 className="py-3">Item Details</h1>
-                  <table>
+                  <table className="col-lg-12">
                     <tr>
                       <th>Item Name</th>
                       <th>Price </th>
