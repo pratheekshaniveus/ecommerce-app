@@ -24,6 +24,11 @@ const Cart = () => {
     setshowModal(true);
   };
   const [loginguest, setloginguest] = useState(false);
+  
+  const [email, setemail] = useState();
+  const [password, setpassword] = useState();
+
+
 
   const loginasGuest = () => {
     let loginguest = "true";
@@ -97,7 +102,6 @@ const Cart = () => {
     (ALLPRODUCTS) => ALLPRODUCTS.incart === "true"
   );
  
-
   return (
     <>
       <div className="bodydiv">
@@ -177,7 +181,7 @@ const Cart = () => {
            <div className="text-center">
            <button 
               type="button"
-              className="btn btn-warning btn-lg text-center"
+              className="btn btn-success btn-lg text-center"
               
             >
                <Link
@@ -286,6 +290,7 @@ const Cart = () => {
                   type="email"
                   className="form-control"
                   placeholder="Email"
+                  onChange={(e)=>setemail(e.target.value)}
                   required
                 />
               </div>
@@ -294,13 +299,15 @@ const Cart = () => {
                   type="password"
                   className="form-control"
                   placeholder="Password"
+                  onChange={(e)=>setpassword(e.target.value)}
                   required
                 />
               </div>
               </div>
               </>
               ) }
-              
+              {loginguest == "true" || (email == "abc@gmail.com" && password=="123" )?(
+                <>
               <h1>Payment Details</h1>
               <div className="row col-lg-12">
                 <div className="col-lg-6 py-2">
@@ -385,6 +392,10 @@ const Cart = () => {
                   </div>
                 </div>
               </div>
+              </>
+               ):(
+                <></>
+               ) }
             </div>
           </Form>
         </Modal.Body>
